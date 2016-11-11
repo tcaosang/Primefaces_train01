@@ -16,25 +16,33 @@
 <h:body>
     <h:form>
     <p:layout fullPage="true">
-        <p:ajax event="resize" listener="#{beanManager.layoutResizeEvent}"/>
-        <p:layoutUnit position="north"> Top Menu</p:layoutUnit>
+        <p:ajax event="resize" listener="#{mainViewController.layoutResizeEvent}"/>
+        <p:layoutUnit position="north">
+         </p:layoutUnit>
 
         <p:layoutUnit position="south"> footer</p:layoutUnit>
 
-        <p:layoutUnit position="east" header="Infomation" collapsible="true"   resizable="true"
+        <p:layoutUnit position="east" header="Infomation" closable="true"   resizable="true"
                       size="150"
         >
-            Menu
+
+
         </p:layoutUnit>
 
-        <p:layoutUnit position="west" header="Menu"   resizable="true"
-                      size="150"
-        >
-            right ads</p:layoutUnit>
+        <p:layoutUnit position="west" header="Menu"      resizable="true"     size="150">
+            <h:form id="menuForm">
+                <p:commandLink id="homeLink" action="/index" value="Home"/>
+                <br/>
+                <p:commandLink id="regLink" action="/userReg" value="User Registration"/>
+                <br/>
+                <p:commandLink id="aboutLink"  action="/about" value="About Us"/>
+            </h:form>
+        </p:layoutUnit>
 
         <p:layoutUnit position="center">
-            <ui:insert name="content"/>
-            content</p:layoutUnit>
+                      <ui:insert name="content"/>
+            content
+        </p:layoutUnit>
 
 
     </p:layout>

@@ -1,16 +1,16 @@
-package com.sang.ministore.beans;
+package com.sang.store.jsf;
 
 import org.primefaces.event.ResizeEvent;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.List;
 
 
-@ManagedBean(name = "beanManager")
-@SessionScoped
-public class BeanManager {
+@Named(value = "mainViewController")
+@RequestScoped
+public class MainViewController {
 
     private String selectionType;
 
@@ -47,7 +47,7 @@ public class BeanManager {
         this.weapon = weapon;
     }
 
-    public BeanManager() {
+    public MainViewController() {
     }
     public String legendary(){
         selectionType ="legendary";
