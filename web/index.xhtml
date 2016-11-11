@@ -27,12 +27,14 @@
               <p:panelGrid columns="2">
                   <p:graphicImage library="images" name="item1.jpg" width="150" height="150"/>
                   <h:outputText value="Legendary items"/>
+                  <p:commandButton value="View Legendary Items" ajax="false"    action="#{beanManager.legendary}"/>
               </p:panelGrid>
           </p:fieldset>
           <p:fieldset legend="item2"    toggleSpeed="600" toggleable="true">
               <p:ajax event="toggle" onsuccess="PF('bar').show();"/>
               <p:panelGrid columns="2">
                   <p:graphicImage library="images" name="item2.jpg" width="150" height="150"/>
+                  <p:commandButton value="View Rare items" ajax="false" action="#{beanManager.rare}"/>
                   <p:scrollPanel    mode="native"  style="width: 500px; height: 200px">
                   <h:outputText value="Rare items"/>
                       <br/>
@@ -52,6 +54,13 @@
                       <br/><h:outputText value="Rare items"/>
                       <br/>
                   </p:scrollPanel>
+              </p:panelGrid>
+          </p:fieldset>
+          <p:fieldset legend="item2" toggleSpeed="200" toggleable="true">
+              <p:ajax event="toggle" onsuccess="PF('bar').show;"/>
+              <p:panelGrid columns="2">
+                  <h:outputText value="Commons items"/>
+                  <p:commandButton value="View Common items" ajax="false" action="#{beanManager.common}"/>
               </p:panelGrid>
           </p:fieldset>
       </p:panel>
